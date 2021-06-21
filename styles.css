@@ -1,0 +1,283 @@
+:root {
+  --naranja: #f2994a;
+  --gris: #bdbdbd;
+}
+
+/*
+INDICE
+
+1-Header
+2-Info
+3-Distribucion Grid
+4-Ingredientes
+5-Intrucciones
+6-Link
+7-Footer 
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  line-height: 1.3em;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  line-height: 1.3em;
+  font-style: italic;
+}
+
+p,
+li {
+  font-family: "Montserrat", sans-serif;
+}
+
+/*1-Header*/
+
+.header,
+.info,
+.ingredientes,
+.intructions,
+.link,
+.footer {
+  margin: 0 5%;
+}
+
+.header__h1 {
+  font-size: 1.4em;
+}
+
+.header__desc {
+  display: flex;
+}
+
+.header__svg {
+  margin-top: 2%;
+
+  margin: 1% 2% 0 0;
+
+  width: 25%;
+
+  max-width: 30px;
+  height: 10%;
+}
+
+.header__img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.header > .header__h1,
+.header__p {
+  margin-bottom: 12px;
+}
+
+/* 2-Info */
+
+.info {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(calc(100% / 3), 1fr));
+  grid-template-rows: repeat(2, 100px);
+}
+
+/*Diseño de tarjetas*/
+
+.info__svg,
+.info__svg--especial {
+  float: left;
+  margin: 2% 5% 100%;
+}
+
+.info__svg--especial {
+  color: #f2994a;
+}
+
+/*Color Gris de Titulo*/
+
+.info__p--gris {
+  color: var(--gris);
+  font-weight: 700;
+}
+
+/*Color Naranja epecial*/
+
+.info__p--especial {
+  color: var(--naranja);
+}
+
+/*3-Distribucion Grid*/
+
+.info__desc--1 {
+  grid-column: 1/1;
+  grid-row: 1/1;
+}
+
+.info__desc--2 {
+  grid-column: 1/1;
+  grid-row: 2/2;
+}
+
+.info__desc--3 {
+  grid-column: 2/2;
+  grid-row: 2/2;
+}
+
+.info__desc--4 {
+  grid-column: 3/3;
+  grid-row: 2/2;
+}
+
+/* 4-Ingredientes */
+
+.ingredientes__h2,
+.ingredientes__h3,
+.ingredientes__input {
+  margin: 15px 0;
+}
+
+.ingredientes > label {
+  font-family: "Montserrat", sans-serif;
+}
+
+.ingredientes__h3 {
+  margin: 20px 0;
+}
+
+/* 5-Intrucciones */
+.intructions__ol {
+  margin-left: 8%;
+}
+
+@media (min-width: 500px) {
+  .intructions__ol {
+    margin-left: 5%;
+  }
+}
+
+.intructions__li {
+  margin: 15px 0;
+}
+
+.intructions__li::before {
+  content: "";
+  display: block;
+  height: 35px;
+  width: 35px;
+  position: relative;
+  left: -35px;
+  top: 33px;
+  z-index: -1;
+  background-color: #f2994a;
+  border-radius: 5px;
+}
+
+.intructions__li::marker {
+  color: #ffffff;
+  font-size: 1.5em;
+  font-family: "Playfair Display", serif;
+}
+
+/* 6-Link*/
+
+.link__p {
+  margin: 30px 0;
+  word-break: break-all;
+  font-style: italic;
+  color: var(--gris);
+}
+
+.link__a {
+  color: var(--gris);
+  text-decoration: none;
+}
+
+/* 7-Footer */
+
+.footer {
+  color: var(--gris);
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer__a {
+  color: var(--gris);
+  font-weight: 700;
+}
+
+/*8-Media Query*/
+
+@media (min-width: 768px) {
+  .header__h1 {
+    font-size: 3em;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    margin: 0 5%;
+  }
+
+  .ingredientes,
+  .intructions {
+    grid-column: 1/1;
+  }
+
+  .ingredientes {
+    grid-row: 1/1;
+  }
+
+  .intructions {
+    grid-row: 2/2;
+  }
+
+  .intructions__h2 {
+    margin-top: 40px;
+  }
+
+  .info {
+    grid-column: 2/2;
+    grid-row: 1/1;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 50px;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+    height: 400px;
+    width: 250px;
+  }
+
+  .info > div {
+    margin: 20px 0;
+  }
+
+  .info__p--especial,
+  .info__p--gris {
+    width: 150px;
+  }
+
+  .info__svg,
+  .info__svg--especial {
+    margin: 0 10px 0 0;
+    width: 35px;
+    height: 35px;
+  }
+}
